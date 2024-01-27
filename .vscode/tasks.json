@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compile exe",
+      "type": "shell",
+      "command": "dart",
+      "args": [
+        "compile",
+        "exe",
+        "bin/flutter_complete_clean.dart"
+      ]
+    },
+    {
+      "label": "rename exe",
+      "type": "shell",
+      "command": "cp",
+      "args": [
+        "bin/flutter_complete_clean.exe",
+        "bin/flutterCompleteClean"
+      ]
+    },
+    {
+      "label": "move exe to bin",
+      "type": "shell",
+      "command": "mv",
+      "args": [
+        "bin/flutterCompleteClean",
+        "/Users/abhi/bin/flutterCompleteClean"
+      ]
+    },
+    {
+      "label": "create exe",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "compile exe",
+        "rename exe",
+        "move exe to bin"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
